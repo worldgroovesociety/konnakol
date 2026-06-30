@@ -229,8 +229,19 @@
   .final .micro{margin-top:18px;font-size:14px;color:var(--ash)}
 
   /* footer */
-  footer{background:var(--bg);color:var(--text-soft);padding:40px 0;font-size:14px}
+  footer{background:var(--bg);color:var(--text-soft);padding:40px 0 90px;font-size:14px}
   footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+
+  /* sticky reserve bar */
+  .stickybar{position:fixed;left:0;right:0;bottom:0;z-index:130;background:rgba(20,18,11,.96);backdrop-filter:blur(8px);
+    border-top:1px solid rgba(255,255,255,.12);transform:translateY(110%);transition:transform .3s ease;box-shadow:0 -10px 30px rgba(0,0,0,.35)}
+  .stickybar.show{transform:translateY(0)}
+  .sb-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 26px}
+  .sb-info{color:var(--cream);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .sb-price{font-family:var(--font-display);font-size:26px;color:var(--paper);line-height:1}
+  .sb-sub{color:var(--text-soft);font-size:13.5px;font-weight:600}
+  .stickybar .btn{padding:12px 24px;font-size:15px;white-space:nowrap}
+  @media(max-width:520px){.sb-sub{display:none}.sb-inner{padding:10px 16px}.sb-price{font-size:22px}.stickybar .btn{padding:11px 18px;font-size:14px}}
 
   /* modal */
   .overlay{position:fixed;inset:0;background:rgba(20,18,11,.6);backdrop-filter:blur(4px);z-index:300;
@@ -329,54 +340,6 @@
   </div>
 </section>
 
-<!-- ================= PROBLEM ================= -->
-<section class="problem" id="problem">
-  <div class="wrap">
-    <div class="eyebrow">Why rhythm slips</div>
-    <p class="quote">You can hear the groove. Locking into it is the hard part.</p>
-    <ul>
-      <li class="spot">Most of the time it is not the notes that fail you. It is the time underneath them.</li>
-      <li>You rush the fast bars and drag the slow ones.</li>
-      <li>Odd meters in five and seven feel like guesswork.</li>
-      <li>A metronome shows you that you are off, never how to fix it.</li>
-      <li>Theory makes sense on paper, then disappears the moment you play.</li>
-      <li>You count in your head instead of feeling the pulse.</li>
-      <li>Solos come apart by the time the cycle comes back around.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ================= WHAT CHANGES ================= -->
-<section class="shift" id="shift">
-  <div class="wrap">
-    <div class="eyebrow">Where groove really comes from</div>
-    <h2>First you feel time in your body. Then you build a vocabulary for it.</h2>
-    <p class="lead">Before technique, before theory, before anything, comes the internalization of time: feeling the pulse in your body instead of counting it in your head. After that comes vocabulary. Most musicians who lack groove are not short on feel, they are short on options, and rhythmic vocabulary is where the options come from. Konnakol is that vocabulary in its purest form, the rhythm of an entire tradition, spoken out loud.</p>
-    <div class="shift-grid">
-      <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>Time in the body</h3>
-        <p>Feel the pulse instead of counting it, and hold it steady at any tempo on your own.</p>
-      </div>
-      <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h10"/><path d="M4 18h7"/></svg></div>
-        <h3>Subdivision you control</h3>
-        <p>Move cleanly between threes, fours, fives and sevens, and switch without losing your place.</p>
-      </div>
-      <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg></div>
-        <h3>An ear that reads rhythm</h3>
-        <p>Hear a pattern and turn it into syllables you can speak, clap and write down.</p>
-      </div>
-      <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
-        <h3>It carries to your instrument</h3>
-        <p>Drums, piano, guitar, bass or voice. The fluency you build transfers straight across.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= THE OFFER / VALUE STACK ================= -->
 <section class="offer" id="offer">
   <div class="wrap">
@@ -437,6 +400,54 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Class times set with the group in September</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Backed by our guarantee</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROBLEM ================= -->
+<section class="problem" id="problem">
+  <div class="wrap">
+    <div class="eyebrow">Why rhythm slips</div>
+    <p class="quote">You can hear the groove. Locking into it is the hard part.</p>
+    <ul>
+      <li class="spot">Most of the time it is not the notes that fail you. It is the time underneath them.</li>
+      <li>You rush the fast bars and drag the slow ones.</li>
+      <li>Odd meters in five and seven feel like guesswork.</li>
+      <li>A metronome shows you that you are off, never how to fix it.</li>
+      <li>Theory makes sense on paper, then disappears the moment you play.</li>
+      <li>You count in your head instead of feeling the pulse.</li>
+      <li>Solos come apart by the time the cycle comes back around.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= WHAT CHANGES ================= -->
+<section class="shift" id="shift">
+  <div class="wrap">
+    <div class="eyebrow">Where groove really comes from</div>
+    <h2>First you feel time in your body. Then you build a vocabulary for it.</h2>
+    <p class="lead">Before technique, before theory, before anything, comes the internalization of time: feeling the pulse in your body instead of counting it in your head. After that comes vocabulary. Most musicians who lack groove are not short on feel, they are short on options, and rhythmic vocabulary is where the options come from. Konnakol is that vocabulary in its purest form, the rhythm of an entire tradition, spoken out loud.</p>
+    <div class="shift-grid">
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Time in the body</h3>
+        <p>Feel the pulse instead of counting it, and hold it steady at any tempo on your own.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h10"/><path d="M4 18h7"/></svg></div>
+        <h3>Subdivision you control</h3>
+        <p>Move cleanly between threes, fours, fives and sevens, and switch without losing your place.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg></div>
+        <h3>An ear that reads rhythm</h3>
+        <p>Hear a pattern and turn it into syllables you can speak, clap and write down.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <h3>It carries to your instrument</h3>
+        <p>Drums, piano, guitar, bass or voice. The fluency you build transfers straight across.</p>
       </div>
     </div>
   </div>
@@ -547,6 +558,16 @@
   </div>
 </footer>
 
+<!-- sticky reserve bar -->
+<div class="stickybar" id="stickybar">
+  <div class="sb-inner wrap">
+    <div class="sb-info"><span class="sb-price">$1,000</span><span class="sb-sub">or 3 &times; $334 &middot; 15 seats &middot; starts September</span></div>
+    <button class="btn btn-green" onclick="reserve()">Reserve your seat
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l7 6-7 6"/></svg>
+    </button>
+  </div>
+</div>
+
 <!-- modal -->
 <div class="overlay" id="ov" onclick="if(event.target===this)closeM()">
   <div class="modal">
@@ -588,6 +609,13 @@
     if (e.key === 'Escape') closeM();
     if (e.key === 'ArrowLeft') flick(-1);
     if (e.key === 'ArrowRight') flick(1);
+  });
+
+  // sticky reserve bar appears after the first screen
+  window.addEventListener('scroll', function(){
+    var sb = document.getElementById('stickybar');
+    if (!sb) return;
+    if (window.scrollY > 640) sb.classList.add('show'); else sb.classList.remove('show');
   });
 </script>
 </body>
