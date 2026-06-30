@@ -325,16 +325,16 @@
     <h2>Your teacher</h2>
     <div class="viewer">
       <div class="track" id="track">
-        <div class="slide active"><video src="media/recite-khandjaati.mp4" controls playsinline preload="metadata"></video></div>
-        <div class="slide"><video src="media/rupak-reimagine.mp4" controls playsinline preload="metadata"></video></div>
-        <div class="slide"><video src="media/recite-bandish.mp4" controls playsinline preload="none"></video></div>
-        <div class="slide"><video src="media/kavita-gat.mp4" controls playsinline preload="none"></video></div>
-        <div class="slide"><video src="media/delhi-kayda.mp4" controls playsinline preload="none"></video></div>
-        <div class="slide"><video src="media/tripalli.mp4" controls playsinline preload="none"></video></div>
-        <div class="slide"><video src="media/gopucha-yati.mp4" controls playsinline preload="none"></video></div>
-        <div class="slide"><video src="media/jhaptaal-chalan.mp4" controls playsinline preload="none"></video></div>
-        <div class="slide"><video src="media/fusion-bass.mp4" controls playsinline preload="none"></video></div>
-        <div class="slide"><video src="media/puriya-kalyan.mp4" controls playsinline preload="none"></video></div>
+        <div class="slide active"><video src="media/recite-khandjaati.mp4#t=0.5" controls playsinline preload="metadata"></video></div>
+        <div class="slide"><video src="media/rupak-reimagine.mp4#t=0.5" controls playsinline preload="metadata"></video></div>
+        <div class="slide"><video src="media/recite-bandish.mp4#t=0.5" controls playsinline preload="metadata"></video></div>
+        <div class="slide"><video src="media/kavita-gat.mp4#t=0.5" controls playsinline preload="metadata"></video></div>
+        <div class="slide"><video src="media/delhi-kayda.mp4#t=0.5" controls playsinline preload="metadata"></video></div>
+        <div class="slide"><video src="media/tripalli.mp4#t=0.5" controls playsinline preload="metadata"></video></div>
+        <div class="slide"><video src="media/gopucha-yati.mp4#t=0.5" controls playsinline preload="metadata"></video></div>
+        <div class="slide"><video src="media/jhaptaal-chalan.mp4#t=0.5" controls playsinline preload="metadata"></video></div>
+        <div class="slide"><video src="media/fusion-bass.mp4#t=0.5" controls playsinline preload="metadata"></video></div>
+        <div class="slide"><video src="media/puriya-kalyan.mp4#t=0.5" controls playsinline preload="metadata"></video></div>
       </div>
       <button class="navbtn prev" onclick="flick(-1)" aria-label="Previous clip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
       <button class="navbtn next" onclick="flick(1)" aria-label="More clips"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
@@ -601,6 +601,10 @@
     b.onclick = function(){ show(i); };
     dotsWrap.appendChild(b);
     s.addEventListener('click', function(){ if (i !== idx) show(i); });
+    var v = s.querySelector('video');
+    v.addEventListener('play', function(){
+      if (!v.dataset.started) { v.dataset.started = '1'; if (v.currentTime < 0.6) v.currentTime = 0; }
+    });
   });
   function layout(){
     var cardW = slides[0].offsetWidth;
